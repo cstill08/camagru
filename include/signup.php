@@ -93,8 +93,12 @@
 			if (mail($to, $subject, $message, $headers))
 			{
 				$_SESSION['message'] = 'The letter has been sent to the post office. Confirm mailing address';
+				header('Location: ../index.php');
+			} else {
+				$_SESSION['message'] = 'An error occurred while sending the letter. Try again';
+				header('Location: ../RestorePassword.php');
 			}
-			header('Location: ../index.php');
+			
 		}
 	
 	}

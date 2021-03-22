@@ -3,7 +3,7 @@
 	session_start();
 	header('Location: ../index.php');
 	include_once '../config/database.php';
-	//require_once 'connect.php';
+
 
 	$login = $_POST['login'];
 	$password = hash('whirlpool', $_POST['password']);
@@ -67,24 +67,4 @@
 		header('Location: ../index.php');
 		exit();
 	}
-	
-
-	/*$check_users = mysqli_query($connect, "SELECT * FROM `users` WHERE `login` = '$login' AND `password` = '$password'");
-	if (mysqli_num_rows($check_users) > 0){
-		$user = mysqli_fetch_assoc($check_users);
-		$_SESSION['user'] = [
-            "id" => $user['id'],
-            "full_name" => $user['full_name'],
-            "email" => $user['email'],
-			"verify" => true,//тут еще нужно добавить про прошел ли верификацию на мыло
-			"message" => "Your email address has been verified successfully"
-        ];
-		header('Location: ../profile.php');
-		exit(0);
-
-	} else {
-		$_SESSION['message'] = 'Incorrect login or password';
-		header('Location: ../index.php');
-	}*/
-
 ?>
