@@ -3,7 +3,7 @@
 	if (isset($_SESSION['user'])) {
 		header('Location: profile.php');
 	}
-	include_once "main.php";
+	//include_once "main.php";
 	require_once('config/setup.php');
 ?>
 
@@ -24,7 +24,7 @@
 				</form>
 			<!-- Если еще не вошел или не зарегистрирован-->
 			<?php else: ?>
-<!--				<h1>Sign in</h1>
+				<h1>Sign in</h1>
 				<form action="include/signin.php" method="post">
 					<label>Login</label>
 					<input type="text" name="login" placeholder="Enter your login">
@@ -44,7 +44,7 @@
 						}
 						unset($_SESSION['message']);
 					?>
-				</form>-->
+				</form>
 			<?php endif; ?>
 		</aside>
 	</body>
